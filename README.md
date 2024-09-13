@@ -1,0 +1,57 @@
+# homeplus     基于SSM的家政服务系统
+   演示网站：https://wenmeng.online/homeplus/
+        账号&密码：
+         管理员
+              账号：15518064076
+              密码：123456
+         消费者
+              账号：17623356481
+              密码：123456
+         家政人员
+              账号：123456789
+              密码：123456
+
+用到的技术  
+    前端：  
+        1.BootStrap  
+        2.sweetalert  
+        3.jquery  
+    后端：  
+        1.Spring  
+        2.SpringMVC  
+        3.MyBatis  
+    数据库：  
+        1.MySQL  
+    开发工具：  
+        1.idea  
+        2.navicate  
+目录结构  
+|--src  
+    |--main  
+        |--java  
+        |--controller  
+        |--dao  
+        |--interceptor  
+        |--entity  
+        |--service  
+        |--utils  
+    |--resources  
+        |--mappers  
+        |--db.properties  
+        |--log4j.properties  
+        |--mybatisConfig.xml  
+        |--springContext-dao.xml  
+        |--springContext-service.xml  
+        |--springmvcContext.xml  
+
+|--sql  
+    |--houseplus.sql  
+
+功能描述：  
+      1.用户的注册、登录、退出系统  
+      2.用户的个性化推荐（基于物品的协同过滤）  
+      3.家政人员上传资料、身份认证和资格认证  
+      4.消费者发布预约、查看预约、确认预约、评价订单、删除订单、修改个人资料  
+      5.家政人员修改个人资料、申请预约、接受订单、取消订单、完成订单  
+      6.管理员对用户认证管理和系统的量化查看  
+后续添加....  

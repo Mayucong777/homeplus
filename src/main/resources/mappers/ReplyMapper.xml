@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<!-- 对用户的数据操作 -->
+<mapper namespace="dao.ReplyMapper">
+
+    <select id="getReplyByMessageID" resultType="entity.Reply">
+      SELECT
+        id AS id,
+        reply_content AS replyContent,
+        reply_status AS replyStatus,
+        reply_id AS replyID,
+        created_time AS replyTime,
+        from_id AS fromID,
+        to_id AS toID
+      FROM
+        reply
+      WHERE
+        reply_id = #{messageID}
+      ORDER BY created_time
+   </select>
+
+    <insert id="insertReply" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO reply(
+          reply_content,
+          created_time,
+          from_id,
+          to_id,
+          reply_id,
+          reply_status
+        ) VALUES (
+          #{replyContent},
+          #{replyTime},
+          #{fromID},
+          #{toID},
+          #{replyID},
+          #{replyStatus}
+        )
+    </insert>
+
+    <delete id="deleteReplyByID" parameterType="java.lang.Integer">
+        DELETE FROM
+          reply
+        WHERE
+          id = #{id}
+    </delete>
+
+</mapper>
